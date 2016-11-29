@@ -6,6 +6,7 @@ $(call inherit-product, device/samsung/rhea-common/rhea.mk)
 # MDPI assets
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi nodpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
+$(call inherit-product, device/mdpi-common/mdpi.mk)
 
 # Init file
 PRODUCT_PACKAGES += \
