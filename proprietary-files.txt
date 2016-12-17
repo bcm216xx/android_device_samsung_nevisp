@@ -11,7 +11,6 @@ bin/glgps
 bin/gps.cer
 bin/gpslogd
 bin/immvibed
-bin/macloader
 bin/mttlogger
 bin/npsmobex
 bin/rild
