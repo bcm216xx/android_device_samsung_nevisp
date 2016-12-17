@@ -17,3 +17,6 @@
 
 # Vold
 /devices/platform/sdhci.0/mmc_host*      auto    auto  defaults                                            voldmanaged=sdcard1:auto,noemulatedsd,encryptable=userdata
+
+# Zram
+/dev/block/zram0        none                swap    defaults                                                zramsize=268435456
