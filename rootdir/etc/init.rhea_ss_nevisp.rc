@@ -374,6 +374,7 @@ service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
+    group system wakelock
     oneshot
 
 service p2p_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
@@ -390,6 +391,7 @@ service p2p_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
+    group system wakelock
     oneshot
 
 # TODO: btld is only used for FM
@@ -411,10 +413,10 @@ on property:init.svc.macloader=stopped
 # end of wifi
 
 service gpsd /system/bin/glgps -c /system/etc/gps/glconfig.xml
-     setenv LD_PRELOAD /system/lib/libglgps-compat.so
+    setenv LD_PRELOAD /system/lib/libglgps-compat.so
     class late_start
     user gps
-    group system sdcard_rw inet root radio wifi
+    group system wakelock sdcard_rw inet root radio wifi
 
 # Run ATX over UART
 service console /system/bin/atx -l -d
